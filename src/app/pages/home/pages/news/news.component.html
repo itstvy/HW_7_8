@@ -1,0 +1,5 @@
+<!-- <p>News work!</p> -->
+<nb-card status="success" *ngFor="let article of articles">
+  <nb-card-header>{{article.title}}</nb-card-header>
+  <div style="height: 100%; margin: 10px;" [innerHtml]="article.body"></div>
+</nb-card>

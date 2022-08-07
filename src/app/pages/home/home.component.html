@@ -1,0 +1,110 @@
+<!-- <nb-card status="success" *ngFor="let article of articles">
+  <nb-card-header>{{article.title}}</nb-card-header>
+  <nb-card-body>
+    <img src={{article.cover_image}}/>
+    <br/>
+   {{article.description}}
+   <button nbButton [routerLink]="['/home/news']">Readmore</button>
+  </nb-card-body>
+  <nb-card-footer class="footer">
+        <nb-user size="large"
+                name="{{article.user.name}}"
+                picture="{{article.user.profile_image}}">
+        </nb-user>
+      <nb-action class="content" icon="calendar-outline"></nb-action>
+      <p>Create at: {{article.created_at}}</p>
+      <nb-action class="content" icon="calendar-outline"></nb-action>
+      <p>Edit at: {{article.edited_at}}</p>
+  </nb-card-footer>
+</nb-card> -->
+
+<div class="wrapper">
+  <div class="card" *ngFor="let article of articles$ | async">
+    <input type="checkbox" id="card1" class="more" aria-hidden="true" />
+    <div class="content">
+      <div class="front">
+        <div class="header-card">
+          <h2>{{ article.title }}</h2>
+        </div>
+        <div class="inner">
+          <img class="image" src="{{ article.cover_image }}" />
+
+          <p class="introduce">{{ article.description }}</p>
+          <label for="card1" class="button" aria-hidden="true">
+            Readmore
+          </label>
+          <!-- <hr> -->
+          <div class="footer">
+            <hr />
+            <div class="footer-card">
+              <p>Create By: </p>
+              <img class="avatar" src="https://www.w3schools.com/howto/img_avatar.png" />
+              <!-- <img class="avatar" src="{{ article.user.profile_image }}" /> -->
+              <!-- <p>{{ article.user.name }}</p> -->
+              <p>An Huynh Van</p>
+              <span></span>
+              <img
+                class="celander-icon"
+                src="https://static.vecteezy.com/system/resources/previews/002/387/838/original/calendar-icon-flat-style-isolated-on-white-background-free-vector.jpg"
+              />
+              <p>Craeted at: {{article.created_at}}</p>
+              <span></span>
+              <img
+                class="celander-icon"
+                src="https://static.vecteezy.com/system/resources/previews/002/387/838/original/calendar-icon-flat-style-isolated-on-white-background-free-vector.jpg"
+              />
+              <p>Edited at: {{article.edited_at}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="header-card">
+          <h2>{{ article.title }}</h2>
+        </div>
+        <div class="inner">
+
+          <!-- <div class="description" [innerHtml]="article.body"></div>   -->
+          <label for="card1" class="buttonreturn" aria-hidden="true">
+            Back
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <nb-flip-card *ngFor="let article of articles" [flipped]="flipped">
+  <nb-card-front>
+      <nb-card status="success">
+        <nb-card-header>{{article.title}}</nb-card-header>
+        <nb-card-body>
+          <img src={{article.cover_image}}/>
+          <br/>
+         {{article.description}}
+         <button nbButton [routerLink]="['/home/news']">Readmore</button>
+        </nb-card-body>
+        <nb-card-footer class="footer">
+              <nb-user size="large"
+                      name="{{article.user.name}}"
+                      picture="{{article.user.profile_image}}">
+              </nb-user>
+            <nb-action class="content" icon="calendar-outline"></nb-action>
+            <p>Create at: {{article.created_at}}</p>
+            <nb-action class="content" icon="calendar-outline"></nb-action>
+            <p>Edit at: {{article.edited_at}}</p>
+        </nb-card-footer>
+      </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card status="success">
+      <nb-card-header>{{article.title}}</nb-card-header>
+          <nb-card-body>
+              <div style="height:500px" [innerHtml]="article.body"></div>
+
+          </nb-card-body>
+          <nb-card-footer>
+          </nb-card-footer>
+      </nb-card>
+  </nb-card-back>
+</nb-flip-card> -->
